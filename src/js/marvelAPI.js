@@ -24,6 +24,9 @@ export default class MaverlAPI {
             `;
         }
         this.addNavigation();
+
+        document.getElementsByClassName('backdrop')[0].style.display = 'none';
+        console.dir(document.getElementsByClassName('backdrop')[0].style);
     }
 
     // método responsável por requisitar os dados dos quadrinhos da API da marvel.
