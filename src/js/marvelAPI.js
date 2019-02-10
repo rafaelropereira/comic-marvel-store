@@ -47,6 +47,23 @@ export default class MaverlAPI {
         });
     }
 
+    getComicByTilte(title) {
+        const url = `http://gateway.marvel.com/v1/public/comics?title=${title}&`;
+
+        fetch(
+            `${url}apikey=b6444bc283a9444d38fc07d5b48d3149&ts=3&hash=277c7d7a576c9833c4ba7368f2b5c0ac&offset=0`,
+            {
+                headers: new Headers({
+                    "Content-Type": "application/json"
+                })
+            }
+        ).then(response => {
+            response.json().then(r => {
+                console.log(r.data);
+            });
+        });
+    }
+
     getComic(id) {
 
         const url = `http://gateway.marvel.com/v1/public/comics/${id}`;
@@ -61,7 +78,6 @@ export default class MaverlAPI {
         ).then(response => {
             response.json().then(r => {
                 console.log(r.data);
-                //console.log(r.data.results.prices.price);
                 this.renderComics(r.data.results);
             });
         });
