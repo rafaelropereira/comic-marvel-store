@@ -1,0 +1,40 @@
+/*-------------------------------------------*\
+    HEADER.CSS
+\*-------------------------------------------*/
+
+header {
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    background-color: #22262a;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.10);
+  }
+  
+  nav {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .menu-container {
+    border-top: 1px solid rgba(255,255,255, .15);
+    padding: 6px;
+  }
+  
+  .header-container__logo{
+    padding: 8px;
+    
+  }
+
+  .menu__item {
+    color: #e0e0e0;
+    cursor: pointer;
+    display: inline;
+    padding: 0 6px;
+  }
+  
+  .menu__item:hover{
+    color: white;
+  }

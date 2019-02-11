@@ -1,0 +1,28 @@
+/*-------------------------------------------*\
+    FOOTER.CSS
+\*-------------------------------------------*/
+
+footer {
+    background-color: #22262a;
+    height: 150px;
+  }
+
+.footer__container {
+    display: inline-block;
+    width: 100%;
+    transform: translateY(190px);
+  }
+  
+  .footer__container__bottom-links{
+  
+    margin: 20px auto;
+    display: flex;
+    width: 82%;
+    text-transform: uppercase;
+    justify-content: space-between;
+  }
+
+  .footer__container__bottom-links__item {
+    text-decoration: none;
+    color: #a2a2a2;
+  }

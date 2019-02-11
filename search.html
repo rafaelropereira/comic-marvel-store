@@ -5,15 +5,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
   <link rel="stylesheet" href="/src/css/reset.css" />
+  <link rel="stylesheet" href="/src/css/components/header.css" />
+  <link rel="stylesheet" href="/src/css/components/footer.css" />
+  <link rel="stylesheet" href="/src/css/global.css" />
+  <link rel="import" href="/src/components/header.html">
+  <link rel="import" href="/src/components/footer.html">
   <script type="module" src="src/js/search.js"></script>
   <title>Search</title>
 </head>
 
 <body>
-  <h1>Search</h1>
-  <input type="text" name="" placeholder="Type here what do you want to search..." id="inputSearch">
-  <button id="btnSearch">Search</button>
+  <!-- Loading backdrop -->
+  <div class="backdrop"></div>
+
+  <main>
+    <!-- Header container -->
+    <header class="header__container"></header>
+    <div style="display: inline-block">
+      <input type="text" name="" placeholder="Type here what do you want to search..." id="inputSearch"></div>
+    <button id="btnSearch">Search</button>
+
+    <!-- Main content container -->
+    <section id="content" class="content-wrapper"></section>
+
+    <!-- Footer container -->
+    <footer class="footer__container"></footer>
+  </main>
+
+  <script src="/src/js/components.js"></script>
+
 </body>
 
 </html>

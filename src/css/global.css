@@ -1,0 +1,32 @@
+/*-------------------------------------------*\
+    GLOBAL.CSS
+\*-------------------------------------------*/
+
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    animation-name: fadeIn;
+    animation-timing-function: ease-in-out;
+    animation-duration: 550ms;
+  }
+
+  .backdrop{
+    position: fixed;
+    z-index: 2;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }

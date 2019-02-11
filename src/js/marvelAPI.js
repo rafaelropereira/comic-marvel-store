@@ -1,4 +1,6 @@
 export default class MaverlAPI {
+
+    // método que adiciona o evento clique em cada item do grid.
     addNavigation() {
         var comics = document.querySelectorAll('.comic');
 
@@ -9,6 +11,12 @@ export default class MaverlAPI {
                 window.location.href = "/details.html";
             }, false);
         }
+    }
+
+    // método responsável por esconder o backdrop.
+    disableBackdrop() {
+        document.getElementsByClassName('backdrop')[0].style.display = 'none';
+        console.dir(document.getElementsByClassName('backdrop')[0].style);
     }
 
     // método responsável por renderizar os dados na view.
@@ -23,29 +31,28 @@ export default class MaverlAPI {
             `;
         }
         this.addNavigation();
-
-        document.getElementsByClassName('backdrop')[0].style.display = 'none';
-        console.dir(document.getElementsByClassName('backdrop')[0].style);
+        this.disableBackdrop();
     }
 
+    // médoto responsável por renderizar os detalhes do quadrinho passar por id.
     renderComicDetail(comics) {
         for (let i = 0; i < comics.length; i++) {
             document.getElementById("content").innerHTML += `
             <div class="comic-container">
-                <div class="comic-cover">
-                    <img src="${comics[i].thumbnail.path}/detail.${comics[i].thumbnail.extension}"
+                <div>
+                    <img class="comic-cover" src="${comics[i].thumbnail.path}/detail.${comics[i].thumbnail.extension}"/>
                 </div>
                 <div class="comic-info">
                     <div class="comic-title">${comics[i].title}</div>
-                    <div class="comic-published">${comics[i].modified}</div>
-                    <div class="comic-description">${comics[i].description}</div>
-                    <div class="comic-description">${comics[i].format}</div>
-                    <div class="comic-price">${comics[i].prices[0].price}</div>
+                    <div class="comic-description">${comics[i].description === null ? 'No description available' : comics[i].description}</div>
+                    <div class="comic-format">${comics[i].format}</div>
+                    <div class="comic-price">US$ ${comics[i].prices[0].price}</div>
                 </div>
             </div>
 
             `;
         }
+        this.disableBackdrop();
     }
 
     // método responsável por requisitar os dados dos quadrinhos da API da marvel.
@@ -61,14 +68,12 @@ export default class MaverlAPI {
             }
         ).then(response => {
             response.json().then(r => {
-                console.log(r.data);
-                //console.log(r.data.results.prices.price);
-                //console.log(this.renderComics);
                 this.renderComics(r.data.results);
             });
         });
     }
 
+    // método utilizado para pesquisar os quadrinho pelo título WIP...
     getComicByTilte(title) {
         const url = `http://gateway.marvel.com/v1/public/comics?title=${title}&`;
 
@@ -86,6 +91,7 @@ export default class MaverlAPI {
         });
     }
 
+    // método responsável por trazer os dados do quadrinho pelo id
     getComic(id) {
 
         const url = `http://gateway.marvel.com/v1/public/comics/${id}`;
@@ -99,7 +105,6 @@ export default class MaverlAPI {
             }
         ).then(response => {
             response.json().then(r => {
-                console.log(r.data);
                 this.renderComicDetail(r.data.results);
             });
         });
