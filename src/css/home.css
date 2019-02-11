@@ -1,5 +1,9 @@
 body {
   font-family: 'Open Sans Condensed', sans-serif;
+  /* animation: fadeIn 400ms all ease-in-out; */
+  animation-name: fadeIn;
+  animation-timing-function: ease-in-out;
+  animation-duration: 550ms
 }
 
 header {
@@ -7,7 +11,6 @@ header {
   z-index: 1;
   position: fixed;
   background-color: #22262a;
-  height: 100px;
   text-align: center;
   box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.10);
 }
@@ -20,9 +23,10 @@ nav {
 
 .content-wrapper {
   margin: 0 auto;
+  min-height: 800px;
   width: 85%;
   justify-content: center;
-  transform: translateY(120px);
+  transform: translateY(160px);
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(auto-fill, 300px);
@@ -62,16 +66,18 @@ nav {
 }
 
 .comic__cover{
-  box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.30);
+  box-shadow: 0 6px 12px 0px rgba(0,0,0,0.35);
 }
 
 .comic__title {
+  margin: 15px 0 0 0;
   font-size: 16px;
   font-weight: bold;
 }
 
-.comic__creators {
-  font-size: 12px;
+.comic__price {
+  margin: 2px 0 0 0;
+  font-size: 22px;
   color: gray;
 }
 
@@ -95,7 +101,7 @@ footer {
 .footer__container {
   display: inline-block;
   width: 100%;
-  transform: translateY(160px);
+  transform: translateY(190px);
 }
 
 .footer__container__bottom-links{
@@ -110,4 +116,24 @@ footer {
 .footer__container__bottom-links__item {
   text-decoration: none;
   color: #a2a2a2;
+}
+
+.menu-container {
+  border-top: 1px solid rgba(255,255,255, .15);
+  padding: 6px;
+}
+
+.header-container__logo{
+  padding: 8px;
+  
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

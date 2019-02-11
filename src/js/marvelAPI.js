@@ -18,7 +18,6 @@ export default class MaverlAPI {
             <div class="comic" data-id="${comics[i].id}">
             <img class="comic__cover" src="${comics[i].thumbnail.path}/portrait_uncanny.${comics[i].thumbnail.extension}" alt="">
                 <h1 class="comic__title">${comics[i].title}</h1>
-                <span class="comic__creators">Teste teste</span>
                 <span class="comic__price">US$ ${comics[i].prices[0].price}</span>
             </div>
             `;
@@ -27,6 +26,26 @@ export default class MaverlAPI {
 
         document.getElementsByClassName('backdrop')[0].style.display = 'none';
         console.dir(document.getElementsByClassName('backdrop')[0].style);
+    }
+
+    renderComicDetail(comics) {
+        for (let i = 0; i < comics.length; i++) {
+            document.getElementById("content").innerHTML += `
+            <div class="comic-container">
+                <div class="comic-cover">
+                    <img src="${comics[i].thumbnail.path}/detail.${comics[i].thumbnail.extension}"
+                </div>
+                <div class="comic-info">
+                    <div class="comic-title">${comics[i].title}</div>
+                    <div class="comic-published">${comics[i].modified}</div>
+                    <div class="comic-description">${comics[i].description}</div>
+                    <div class="comic-description">${comics[i].format}</div>
+                    <div class="comic-price">${comics[i].prices[0].price}</div>
+                </div>
+            </div>
+
+            `;
+        }
     }
 
     // método responsável por requisitar os dados dos quadrinhos da API da marvel.
@@ -81,7 +100,7 @@ export default class MaverlAPI {
         ).then(response => {
             response.json().then(r => {
                 console.log(r.data);
-                this.renderComics(r.data.results);
+                this.renderComicDetail(r.data.results);
             });
         });
     }
