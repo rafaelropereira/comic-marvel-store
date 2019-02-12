@@ -60,7 +60,7 @@ export default class MaverlAPI {
         const url = "http://gateway.marvel.com/v1/public/comics";
 
         fetch(
-            `${url}?apikey=b6444bc283a9444d38fc07d5b48d3149&ts=3&hash=277c7d7a576c9833c4ba7368f2b5c0ac&offset=500`,
+            `${url}?apikey=b6444bc283a9444d38fc07d5b48d3149&ts=3&hash=277c7d7a576c9833c4ba7368f2b5c0ac&offset=500&limit=40`,
             {
                 headers: new Headers({
                     "Content-Type": "application/json"

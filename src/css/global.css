@@ -30,3 +30,13 @@ body {
       opacity: 1;
     }
   }
+
+  .backdrop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .backdrop__text {
+    font-size: 28px;
+  }
