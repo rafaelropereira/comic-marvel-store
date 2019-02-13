@@ -14,27 +14,113 @@
   <link rel="import" href="/src/components/footer.html">
   <script type="module" src="src/js/search.js"></script>
   <title>Search</title>
+
+  <!-- TEMP STYLES - WIP... -->
+  <style>
+    .main-container {
+      display: flex;
+      background-color: gray;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: space-between;
+      align-content: space-between;
+
+    }
+
+
+
+
+    .header {
+      height: 100px;
+      background-color: lightcoral;
+    }
+
+    .content {
+      background-color: lightgreen;
+      width: 1000px;
+      flex: 1;
+      flex-direction: column;
+      align-self: center;
+    }
+
+    .footer {
+      height: 100px;
+      background-color: lightblue;
+    }
+
+    .search-container {
+      margin: 20px 0 0 0;
+      min-width: 1000px;
+      display: flex;
+      justify-content: space-between;
+      align-self: flex-start;
+    }
+
+    .input-search {
+      width: 85%;
+      padding: 10px;
+    }
+
+    .btn-search {
+      padding: 10px 30px;
+      font-weight: bold;
+    }
+
+    .search-result-container {
+      padding: 15px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      margin: 20px 0 0 0;
+    }
+
+    .search-result__item__info-title-label {
+      font-size: 20px;
+    }
+
+    .search-result__item__info-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .search-result__item {
+      display: flex;
+      cursor: pointer;
+    }
+
+    .search-result__item__image {
+      margin: 0 20px 0 0;
+    }
+  </style>
+
 </head>
 
 <body>
   <!-- Loading backdrop -->
   <div class="backdrop"></div>
 
-  <main>
-    <!-- Header container -->
-    <header class="header__container"></header>
-    <div style="display: inline-block">
-      <input type="text" name="" placeholder="Type here what do you want to search..." id="inputSearch"></div>
-    <button id="btnSearch">Search</button>
-
-    <!-- Main content container -->
-    <section id="content" class="content-wrapper"></section>
-
-    <!-- Footer container -->
-    <footer class="footer__container"></footer>
-  </main>
-
   <script src="/src/js/components.js"></script>
+
+  <div class="main-container">
+    <div class="header">Header</div>
+    <div class="content">
+      <div class="search-container">
+        <input type="text" class="input-search" placeholder="Type what do you what to search...">
+        <button class="btn-search">Search</button>
+      </div>
+
+      <div class="search-result-container">
+        <div class="search-result__item">
+          <img class="search-result__item__image" src="//via.placeholder.com/100x80" height="80" alt="">
+          <div class="search-result__item__info">
+            <h1 class="search-result__item__info-title-label">Title</h1>
+            <p class="search-result__item__info-title">Lorem ipsum amet</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer">Footer</div>
+  </div>
 
 </body>
 
