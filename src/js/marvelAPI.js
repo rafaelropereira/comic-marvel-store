@@ -43,10 +43,24 @@ export default class MaverlAPI {
                     <img class="comic-cover" src="${comics[i].thumbnail.path}/detail.${comics[i].thumbnail.extension}"/>
                 </div>
                 <div class="comic-info">
-                    <div class="comic-title">${comics[i].title}</div>
-                    <div class="comic-description">${comics[i].description === null ? 'No description available' : comics[i].description}</div>
-                    <div class="comic-format">${comics[i].format}</div>
-                    <div class="comic-price">US$ ${comics[i].prices[0].price}</div>
+                    <div class="comic-info-item">
+                        <div class="comic-title">${comics[i].title}</div>
+                    </div>
+                    
+                    <div class="comic-info-item">
+                        <div class="comic-label">Description</div>
+                        <div class="comic-description">${comics[i].description === null ? 'No description available' : comics[i].description}</div>
+                    </div>
+
+                    <div class="comic-info-item">
+                        <div class="comic-label">Format</div>
+                        <div class="comic-format">${comics[i].format}</div>
+                    </div>
+
+                    <div class="comic-info-item">
+                        <div class="comic-label">Price</div>
+                        <div class="comic-price">US$ ${comics[i].prices[0].price}</div>
+                    </div>
                 </div>
             </div>
 

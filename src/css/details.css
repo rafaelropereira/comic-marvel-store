@@ -14,19 +14,21 @@
     margin: 0 auto;
 }
 
-.comic-title{
+.comic-title {
     font-size: 36px;
     font-weight: bold;
-    margin: 0 0 30px 0;
 }
 
 .comic-cover{
     box-shadow: 0 6px 12px 0px rgba(0,0,0,0.35);
 }
 
+.comic-description, .comic-format, .comic-price {
+    line-height: 1.6;
+}
+
 .comic-description{
     font-size: 24px;
-    line-height: 1.6;
 }
 
 .comic-format{
@@ -34,7 +36,14 @@
 }
 
 .comic-price{
-    margin: 10px 0 0 0;
     font-size: 40px;
     font-weight: bold;
+}
+
+.comic-label {
+    color: #ccc;
+}
+
+.comic-info-item{
+    margin: 0 0 20px 0;
 }
