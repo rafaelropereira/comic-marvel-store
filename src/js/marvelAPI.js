@@ -100,7 +100,25 @@ export default class MaverlAPI {
             }
         ).then(response => {
             response.json().then(r => {
-                console.log(r.data);
+                console.log(r.data.results);
+
+                let test = r.data.results;
+                let v = test.map(el => {
+
+                    return `<div class="search-result__item" data-id=${el.id}>
+          <img class="search-result__item__image" src="${el.thumbnail.path}/standard_medium.${el.thumbnail.extension}" alt="">
+          <div class="search-result__item__info">
+          <p class="search-result__item__info-format">${el.format}</p>
+            <p class="search-result__item__info-title">${el.title}</p>
+            <p class="search-result__item__info-price">US$ ${el.prices[0].price}</p>
+          </div>
+        </div>`
+                });
+
+                //console.log(v.join("").trim());
+
+                document.getElementsByClassName('search-result-container')[0].innerHTML = v.join("").trim();
+
             });
         });
     }

@@ -5,8 +5,8 @@ const marvelAPI = new MarvelAPI();
 marvelAPI.disableBackdrop();
 
 // Selecionando os elementos do DOM
-const inputSearch = document.getElementById('inputSearch');
-const btnSearch = document.getElementById('btnSearch');
+const inputSearch = document.getElementsByClassName('input-search')[0];
+const btnSearch = document.getElementsByClassName('btn-search')[0];
 
 // Adicionando evento clique no botão para pesquisar os quadrinhos.
 btnSearch.addEventListener('click', function () {
